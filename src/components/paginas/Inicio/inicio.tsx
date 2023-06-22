@@ -1,10 +1,11 @@
+import HeaderIconDemo from "./secciones/secciones";
 
 
 
 export default function InicioMegafietas() {
     return (
         
-        <h1>inicioooo</h1>
+        <HeaderIconDemo/>
         
     )
 }

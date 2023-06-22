@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import InicioMegafietas from '../components/paginas/inicio';
 import PaquetesMegafietas from '../components/paginas/paquetes';
 import InfoGeneralMegafietas from '../components/paginas/infoGeneral';
-import ResponsiveDrawer from '../components/drawer/drawer';
 import ContactosMegafietas from '../components/paginas/contactos';
 
 export default function RutasMegafiestas() {

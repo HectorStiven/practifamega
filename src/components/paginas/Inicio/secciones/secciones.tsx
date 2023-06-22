@@ -5,7 +5,7 @@ export default function HeaderIconDemo() {
     return (
         <div className="card">
             <TabView>
-                <TabPanel header="15 AÑOS" rightIcon="pi pi-calendar mr-2">
+                <TabPanel header="15 AÑOSs" rightIcon="pi pi-calendar mr-2">
                     <p className="m-0">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

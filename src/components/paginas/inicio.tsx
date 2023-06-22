@@ -4,7 +4,7 @@
 export default function InicioMegafietas() {
     return (
         
-        <h1>inicio</h1>
+        <h1>inicioooo</h1>
         
     )
 }

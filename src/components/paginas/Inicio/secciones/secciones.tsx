@@ -1,8 +1,21 @@
 
 import { TabView, TabPanel } from 'primereact/tabview';
-
+import { Box } from "@mui/material";
 export default function HeaderIconDemo() {
     return (
+
+
+        <Box sx={{
+   
+    border: 1,
+    backgroundColor:'#042F4A',
+    borderColor: "#dddddd", 
+    width: "auto",      
+    height: "auto",
+    margin:0
+   }}>
+
+    
         <div className="card">
             <TabView>
                 <TabPanel header="15 AÑOSs" rightIcon="pi pi-calendar mr-2">
@@ -31,5 +44,7 @@ export default function HeaderIconDemo() {
                 </TabPanel>
             </TabView>
         </div>
+
+        </Box>
     )
 }

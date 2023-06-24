@@ -17,6 +17,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import RutasMegafiestas from '../../routes/rutas';
+import { Grid } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -139,7 +140,11 @@ export default function ResponsiveDrawer(props: Props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <RutasMegafiestas />
+                <Grid container spacing={0}>
+                    <Grid item xs={5}>
+                        <RutasMegafiestas />
+                    </Grid>
+                </Grid>
             </Box>
         </Box>
     );

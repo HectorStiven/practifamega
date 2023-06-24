@@ -141,7 +141,7 @@ export default function ResponsiveDrawer(props: Props) {
             >
                 <Toolbar />
                 <Grid container spacing={0}>
-                    <Grid item xs={5}>
+                    <Grid item xs={12}>
                         <RutasMegafiestas />
                     </Grid>
                 </Grid>

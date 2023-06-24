@@ -33,7 +33,11 @@ export default function RutasMegafiestas() {
                     element={
                         <ContactosMegafietas />}
                 />
-              
+                <Route
+                    path={"/"}
+                    element={
+                        <>bienbenido</>}
+                />
                 
         </Routes>
  </>

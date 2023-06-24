@@ -6,7 +6,7 @@ export default function ImagenMegafiestasMenu() {
 
            <Grid container spacing={0}>
                     <Grid item xs={10}>
-                         <img src='../images/inicio.jpeg  ' style={{ height: "100%" }} alt="Imagen de inicio" />
+                         <img src='../images/inicio.jpeg  ' style={{ height: "40%" }} alt="Imagen de inicio" />
                     </Grid>
                 </Grid>
       

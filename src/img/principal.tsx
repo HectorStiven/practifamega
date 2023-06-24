@@ -1,7 +1,15 @@
+import { Grid } from "@mui/material";
+
 export default function ImagenMegafiestasMenu() {
 
     return (
-        <img src='../images/inicio.jpeg  ' style={{ height: "80%" }} alt="Imagen de inicio" />
+
+           <Grid container spacing={0}>
+                    <Grid item xs={10}>
+                         <img src='../images/inicio.jpeg  ' style={{ height: "100%" }} alt="Imagen de inicio" />
+                    </Grid>
+                </Grid>
+      
         
     );
 

@@ -37,7 +37,7 @@ export default function ResponsiveDrawer(props: Props) {
         setMobileOpen(!mobileOpen);
     };
 
-    const links = ['Inicio', 'Paquetes', 'inf General', 'Contacto'];
+    const links = ['Inicio', 'Paquetes','servicios', 'inf General', 'Contacto'];
     const drawer = (
         <div>
             <Toolbar />

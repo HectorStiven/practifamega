@@ -1,4 +1,5 @@
-import ImagenMegafiestasMenu from "../../../img/principal";
+
+import MostartImagenesInicio from "./MuestraFotosGenerales/MuestraFotos";
 
 
 
@@ -7,8 +8,7 @@ export default function InicioMegafietas() {
     return (
         <>
 
-            <ImagenMegafiestasMenu/>
-      
+            <MostartImagenesInicio/>
          
          
          </>

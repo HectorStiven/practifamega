@@ -4,6 +4,7 @@ import PaquetesMegafietas from '../components/paginas/Paquetes/paquetes';
 import InfoGeneralMegafietas from '../components/paginas/Infogeneral/infoGeneral';
 import ContactosMegafietas from '../components/paginas/Contactos/contactos';
 import MostrarServiciosMegafiestas from '../components/paginas/Servicios/MuestraServicios';
+import HomeMegafiestas from '../components/home/home';
 
 export default function RutasMegafiestas() {
 
@@ -42,7 +43,7 @@ export default function RutasMegafiestas() {
                 <Route
                     path={"/"}
                     element={
-                        <>bienbenido</>}
+                        <HomeMegafiestas/>}
                 />
                 
         </Routes>

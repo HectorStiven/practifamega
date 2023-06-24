@@ -2,7 +2,7 @@
 export default function ContactosMegafietas() {
 
     return (
-       <h1>hola</h1>
+       <h1>hola concontactp</h1>
     );
 
 }

@@ -25,7 +25,7 @@ export default function FilterDemo() {
 
     const itemTemplate = (item: Product) => {
         return (
-            <div className="flex flex-wrap p-2 align-items-center gap-3">
+            <div style={{ width: '80%', height: 'auto' }} key={item.id}   className="flex flex-wrap p-2 align-items-center gap-3">
                 <img
                     className="w-4rem shadow-2 flex-shrink-0 border-round"
                     src={`https://primefaces.org/cdn/primereact/images/product/${item.image}`}
@@ -45,7 +45,7 @@ export default function FilterDemo() {
 
     return (
         <Grid container justifyContent="center" spacing={2}>
-            <Grid item xs={12} md={10} lg={8} xl={6}>
+            <Grid item xs={10} md={8} lg={6} xl={4}>
                 <div className="card">
                     <OrderList
                         value={products}

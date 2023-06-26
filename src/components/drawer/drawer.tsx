@@ -54,7 +54,7 @@ export default function ResponsiveDrawer(props: Props) {
                            
                                 <ListItemText primary={text.toUpperCase()}
                                  style={{
-                                    color: "#FF9142",
+                                    color: "black",
                                     border: "0px solid black",
                                     margin: -10,
                                     width: "auto",
@@ -81,7 +81,7 @@ export default function ResponsiveDrawer(props: Props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar style={{ backgroundColor: '#aa8f43'}}
+            <AppBar style={{ backgroundColor: '#ffdc00'}}
                 position="fixed"
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },

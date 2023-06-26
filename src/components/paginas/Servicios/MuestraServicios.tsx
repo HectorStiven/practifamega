@@ -25,15 +25,15 @@ export default function FilterDemo() {
 
     const itemTemplate = (item: Product) => {
         return (
-            <div style={{ width: '80%', height: 'auto' }} key={item.id}   className="flex flex-wrap p-2 align-items-center gap-3">
-                <img
+            <div style={{ width: 'auto', height: 'auto' }} key={item.id}   className="flex flex-wrap p-2 align-items-center gap-3">
+                <img style={{ width: 'auto', height: 'auto' }}
                     className="w-4rem shadow-2 flex-shrink-0 border-round"
                     src={`https://primefaces.org/cdn/primereact/images/product/${item.image}`}
                     alt={item.name}
                 />
-                <div className="flex-1 flex flex-column gap-2 xl:mr-8">
-                    <span className="font-bold">{item.name}</span>
-                    <div className="flex align-items-center gap-2">
+                <div style={{ width: 'auto', height: 'auto' }} className="flex-1 flex flex-column gap-2 xl:mr-8">
+                    <span style={{ width: 'auto', height: 'auto' }}  className="font-bold">{item.name}</span>
+                    <div  className="flex align-items-center gap-2">
                         <i className="pi pi-tag text-sm"></i>
                         <span>{item.category}</span>
                     </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { OrderList } from 'primereact/orderlist';
 import { ProductService } from './servicio/ServicioProducto';
-
+import { Box } from "@mui/material";
 interface Product {
     id: string;
     code: string;
@@ -24,6 +24,15 @@ export default function FilterDemo() {
 
     const itemTemplate = (item: Product) => {
         return (
+            <Box sx={{
+
+                border: 1,
+                backgroundColor: '#042F4A',
+                borderColor: "#dddddd",
+                width: "80%",
+                height: "auto",
+                margin: 0
+            }}>
             <div className="flex flex-wrap p-2 align-items-center gap-3">
                 <img className="w-4rem shadow-2 flex-shrink-0 border-round" src={`https://primefaces.org/cdn/primereact/images/product/${item.image}`} alt={item.name} />
                 <div className="flex-1 flex flex-column gap-2 xl:mr-8">
@@ -35,6 +44,7 @@ export default function FilterDemo() {
                 </div>
                 <span className="font-bold text-900">${item.price}</span>
             </div>
+            </Box>
         );
     };
 

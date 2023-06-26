@@ -53,7 +53,7 @@ export default function HeaderIconDemo() {
                             TRANSPORTES  INCLUIDOS
                     </p>
                 </TabPanel>
-                <TabPanel header="RUMBOTECAS" rightIcon="pi pi-cog ml-2">
+                <TabPanel header="RUMBOTECAS" >
                     <p className="m-0">
                             PAQUETE ORO MINI CONCIERTO 1.200.000
 

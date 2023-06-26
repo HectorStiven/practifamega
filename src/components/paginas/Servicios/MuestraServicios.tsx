@@ -11,7 +11,7 @@ interface Product {
     image: string;
     price: number;
     category: string;
-    // quantity: number;
+    quantity: number;
     inventoryStatus: 'string',
     rating: number;
 }
@@ -45,7 +45,7 @@ export default function FilterDemo() {
 
     return (
         <Grid container justifyContent="center" spacing={2}>
-            <Grid item xs={10}>
+            <Grid item sm={10}>
                 <OrderList
                     value={products}
                     onChange={(e) => setProducts(e.value)}

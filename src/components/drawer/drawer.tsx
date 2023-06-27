@@ -22,130 +22,110 @@ import { Grid } from '@mui/material';
 const drawerWidth = 240;
 
 interface Props {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window?: () => Window;
+  window?: () => Window;
 }
 
 export default function ResponsiveDrawer(props: Props) {
-    const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
 
-    const links = ['Inicio', 'Paquetes','servicios', 'inf General', 'Contacto'];
-    const drawer = (
-        <div>
-            <Toolbar />
-            <Divider />
-            <List>
-                {links.map((text, index) => {
-                return(
-                    <Link key={index}  to={`/${text.toLowerCase()}`} style={{ textDecoration: "none" }}>
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                           
-                                <ListItemText primary={text.toUpperCase()}
-                                 style={{
-                                    color: "black",
-                                    border: "0px solid black",
-                                    margin: -10,
-                                    width: "auto",
+  const links = ['Inicio', 'Paquetes', 'Servicios', 'Info General', 'Contacto'];
 
-                                }} />
-                           
-                        </ListItemButton>
-                    </ListItem>
-                    </Link>
-                )})}
-            </List>
-         
+  const drawer = (
+    <div>
+      <Toolbar />
+      <Divider />
+      <List>
+        {links.map((text, index) => (
+          <Link key={index} to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText
+                  primary={text.toUpperCase()}
+                  style={{
+                    color: 'black',
+                    border: '0px solid black',
+                    margin: -10,
+                    width: 'auto',
+                  }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+      <Divider />
+    </div>
+  );
 
+  const container = window !== undefined ? () => window().document.body : undefined;
 
-
-
-            <Divider />
-          
-        </div>
-    );
-
-    const container = window !== undefined ? () => window().document.body : undefined;
-
-    return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar style={{ backgroundColor: '#ffdc00'}}
-                position="fixed"
-                sx={{
-                    width: { sm: `calc(100% - ${drawerWidth}px)` },
-                    ml: { sm: `${drawerWidth}px` },
-                }}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        MEGAFIESATAS
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Box
-                component="nav"
-                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-                aria-label="mailbox folders"
-            >
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Drawer
-                    container={container}
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
-                    sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                >
-                    {drawer}
-                </Drawer>
-                <Drawer
-                    variant="permanent"
-                    sx={{
-                        display: { xs: 'none', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                    open
-                >
-                    {drawer}
-                </Drawer>
-            </Box>
-            <Box
-                component="main"
-                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-            >
-                <Toolbar />
-                <Grid container spacing={0}>
-                    <Grid item xs={10}>
-                        <RutasMegafiestas />
-                    </Grid>
-                </Grid>
-            </Box>
-        </Box>
-    );
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar style={{ backgroundColor: '#ffdc00' }} position="fixed" sx={{ height: 64 }}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap component="div">
+            MEGAFIESTAS
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true,
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'block', md: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: 'none', sm: 'none', md: 'block' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 3, height: '100%', overflow: 'auto' }}
+      >
+        <Toolbar />
+        <Grid container spacing={0}>
+          <Grid item xs={10}>
+            <RutasMegafiestas />
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
+  );
 }

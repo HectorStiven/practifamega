@@ -117,11 +117,17 @@ export default function ResponsiveDrawer(props: Props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, height: '100%', overflow: 'auto' }}
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          height: '100%',
+          overflow: 'auto',
+          marginLeft: { sm: drawerWidth },
+        }}
       >
         <Toolbar />
-        <Grid container spacing={0}>
-          <Grid item xs={10}>
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item xs={12} sm={10} md={8}>
             <RutasMegafiestas />
           </Grid>
         </Grid>

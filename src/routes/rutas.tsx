@@ -31,7 +31,7 @@ export default function RutasMegafiestas() {
                         <MostrarServiciosMegafiestas />}
                 />
                 <Route
-                    path={"/inf General"}
+                    path={"/Info General"}
                     element={
                         <InfoGeneralMegafietas />}
                 />

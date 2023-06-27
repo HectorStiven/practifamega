@@ -39,8 +39,19 @@ export default function FilterDemo() {
     };
 
     return (
-        <div className="card xl:flex xl:justify-content-center">
-            <OrderList value={products} onChange={(e) => setProducts(e.value)} itemTemplate={itemTemplate} header="Servicios" filter filterBy="name"></OrderList>
-        </div>
-    )
+        <Grid container justifyContent="center" spacing={2}>
+            <Grid item xs={10} md={8} lg={6} xl={4}>
+                <div className="card">
+                    <OrderList
+                        value={products}
+                        onChange={(e) => setProducts(e.value)}
+                        itemTemplate={itemTemplate}
+                        header="Products"
+                        filter
+                        filterBy="name"
+                    />
+                </div>
+            </Grid>
+        </Grid>
+    );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   AppBar,
@@ -39,7 +39,26 @@ const ResponsiveDrawer = () => {
       <List>
         {links.map((text, index) => (
           <Link key={index} to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none' }}>
-            <ListItem disablePadding>
+            <ListItem
+              style={{
+                width:'96%',
+                color: 'black', // Cambia el color del texto a negro
+                background: " radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,220,0,1) 83%)",
+                padding: '1px', // Añade un espacio de relleno de 1px alrededor del ListItem
+                borderRadius: 7, // Agrega bordes redondeados al ListItem
+                boxShadow: '0 2px 4px 2px rgba(0, 0, 0, 0.2)', // Agrega una sombra más intensa al ListItem
+                fontSize: '28px', // Cambia el tamaño de fuente a 28px
+                fontWeight: 'bold', // Aplica un estilo de fuente en negrita al texto
+                textAlign: 'center', // Centra el texto dentro del ListItem
+                textTransform: 'uppercase', // Transforma el texto a mayúsculas
+                margin: '5px', // Agrega un margen de 5px alrededor del ListItem
+                lineHeight: '1.5', // Ajusta el espacio entre líneas del texto
+                cursor: 'pointer', // Cambia el cursor al pasar sobre el ListItem
+                transition: 'background-color 0.3s ease', // Agrega una transición suave al cambiar el color de fondo
+              }}
+              disablePadding
+            >
+
               <ListItemButton>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text.toUpperCase()} />
@@ -64,8 +83,9 @@ const ResponsiveDrawer = () => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          MEGAFIESTAS
+
+        <Typography variant="h6" sx={{ color:"black",textAlign: 'center', width: '100%' }}>
+          MEGAFIESTAS DEL LLANO
         </Typography>
       </Toolbar>
     </AppBar>

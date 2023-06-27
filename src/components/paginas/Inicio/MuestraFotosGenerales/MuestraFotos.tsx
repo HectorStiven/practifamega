@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Galleria, GalleriaResponsiveOptions } from 'primereact/galleria';
 import { PhotoService } from './services/FotosExtraidas';
 
 export default function MostartImagenesInicio() {
-    const [images, setImages] = useState<any[]>([]); // Cambio en el tipo de estado inicial
+    const [images, setImages] = useState<any[]>([]);
 
     const responsiveOptions: GalleriaResponsiveOptions[] = [
         {
@@ -34,17 +34,21 @@ export default function MostartImagenesInicio() {
 
     return (
         <div className="card">
-            <Galleria
-                value={images}
-                responsiveOptions={responsiveOptions}
-                numVisible={5}
-                circular
-                style={{ maxWidth: '640px' }}
-                showItemNavigators
-                showItemNavigatorsOnHover
-                item={itemTemplate}
-                thumbnail={thumbnailTemplate}
-            />
+            <div className="row">
+                <div className="col-12">
+                    <Galleria
+                        value={images}
+                        responsiveOptions={responsiveOptions}
+                        numVisible={5}
+                        circular
+                        style={{ maxWidth: '640px' }}
+                        showItemNavigators
+                        showItemNavigatorsOnHover
+                        item={itemTemplate}
+                        thumbnail={thumbnailTemplate}
+                    />
+                </div>
+            </div>
         </div>
     )
 }

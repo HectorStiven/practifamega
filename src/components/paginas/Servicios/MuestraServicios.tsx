@@ -1,5 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
-import { OrderList } from 'primereact/orderlist';
+import { Button } from 'primereact/button';
+import { Carousel, CarouselResponsiveOption } from 'primereact/carousel';
+import { Tag } from 'primereact/tag';
 import { ProductService } from './servicio/ServicioProducto';
 
 interface Product {
@@ -11,36 +14,72 @@ interface Product {
     price: number;
     category: string;
     quantity: number;
-    inventoryStatus: 'string',
+    inventoryStatus: string;
     rating: number;
 }
 
-export default function FilterDemo() {
+export default function BasicDemo() {
     const [products, setProducts] = useState<Product[]>([]);
+    const responsiveOptions: CarouselResponsiveOption[] = [
+        {
+            breakpoint: '1199px',
+            numVisible: 1,
+            numScroll: 1
+        },
+        {
+            breakpoint: '991px',
+            numVisible: 2,
+            numScroll: 1
+        },
+        {
+            breakpoint: '767px',
+            numVisible: 1,
+            numScroll: 1
+        }
+    ];
+
+    const getSeverity = (product: Product) => {
+        switch (product.inventoryStatus) {
+            case 'INSTOCK':
+                return 'success';
+
+            case 'LOWSTOCK':
+                return 'warning';
+
+            case 'OUTOFSTOCK':
+                return 'danger';
+
+            default:
+                return null;
+        }
+    };
 
     useEffect(() => {
-        ProductService.getProductsSmall().then((data:any) => setProducts(data));
+        ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 9)));
     }, []);
 
-    const itemTemplate = (item: Product) => {
+    const productTemplate = (product: Product) => {
         return (
-            <div className="flex flex-wrap p-2 align-items-center gap-3">
-                <img className="w-4rem shadow-2 flex-shrink-0 border-round" src={`https://primefaces.org/cdn/primereact/images/product/${item.image}`} alt={item.name} />
-                <div className="flex-1 flex flex-column gap-2 xl:mr-8">
-                    <span className="font-bold">{item.name}</span>
-                    <div className="flex align-items-center gap-2">
-                        <i className="pi pi-tag text-sm"></i>
-                        <span>{item.category}</span>
+            <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                <div className="mb-3">
+                    <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} className="w-6 shadow-2" />
+                </div>
+                <div>
+                    <h4 className="mb-1">{product.name}</h4>
+                    <h6 className="mt-0 mb-3">${product.price}</h6>
+                    <Tag value={product.inventoryStatus} severity={getSeverity(product)}></Tag>
+                    <div className="mt-5 flex flex-wrap gap-2 justify-content-center">
+                        <Button icon="pi pi-search" className="p-button p-button-rounded" />
+                        <Button icon="pi pi-star-fill" className="p-button-success p-button-rounded" />
                     </div>
                 </div>
-                <span className="font-bold text-900">${item.price}</span>
             </div>
         );
     };
 
     return (
-        <div className="card xl:flex xl:justify-content-center">
-            <OrderList value={products} onChange={(e) => setProducts(e.value)} itemTemplate={itemTemplate} header="Servicios" filter filterBy="name"></OrderList>
+        <div className="card">
+            <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} />
         </div>
     )
 }

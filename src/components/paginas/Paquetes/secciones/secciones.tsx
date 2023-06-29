@@ -8,7 +8,6 @@ export default function HeaderIconDemo() {
         <Box sx={{
    
     border: 1,
-    backgroundColor:'#042F4A',
     borderColor: "#dddddd", 
     width: "auto",      
     height: "auto",

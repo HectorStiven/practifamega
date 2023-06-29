@@ -1,11 +1,10 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from 'primereact/button';
 import { Carousel, CarouselResponsiveOption } from 'primereact/carousel';
 import { Tag } from 'primereact/tag';
 import { ProductService } from './servicio/ServicioProducto';
-import './index.css';
-import './flags.css';
+
 
 interface Product {
     id: string;

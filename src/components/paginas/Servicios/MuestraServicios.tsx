@@ -4,6 +4,8 @@ import { Button } from 'primereact/button';
 import { Carousel, CarouselResponsiveOption } from 'primereact/carousel';
 import { Tag } from 'primereact/tag';
 import { ProductService } from './servicio/ServicioProducto';
+import './index.css';
+import './flags.css';
 
 interface Product {
     id: string;
@@ -55,11 +57,12 @@ export default function BasicDemo() {
     };
 
     useEffect(() => {
-        ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 9)));
+        ProductService.getProductsSmall().then((data:any) => setProducts(data.slice(0, 9)));
     }, []);
 
     const productTemplate = (product: Product) => {
         return (
+            
             <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
                 <div className="mb-3">
                     <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} className="w-6 shadow-2" />

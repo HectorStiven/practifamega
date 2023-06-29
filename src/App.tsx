@@ -1,7 +1,8 @@
 import ResponsiveDrawer from './components/drawer/drawer';
-import 'primereact/resources/themes/saga-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';   // theme
+import 'primereact/resources/primereact.css';                       // core css
+import 'primeicons/primeicons.css';                                 // icons
+import 'primeflex/primeflex.css';;
 
 // import RutasMegafiestas from './routes/rutas';
 

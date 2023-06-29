@@ -92,7 +92,7 @@ const ResponsiveDrawer = () => {
         </IconButton>
 
         <Typography variant="h6" sx={{ color:"black",textAlign: 'center', width: '100%' }}>
-          MEGAFIESTAS DEL LLANO
+          MEGAFIESTAS DEL LLANO SAS
         </Typography>
       </Toolbar>
     </AppBar>

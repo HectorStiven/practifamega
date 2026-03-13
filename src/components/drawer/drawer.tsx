@@ -25,7 +25,7 @@ import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import PhoneIphoneTwoToneIcon from '@mui/icons-material/PhoneIphoneTwoTone';
 const drawerWidth = 240;
 
-const links = ['Inicio', 'Paquetes', 'Servicios', 'Info General', 'Contacto'];
+const links = ['Inicio', 'Paquetes', 'Servicios','Tarimas','Pista Led', 'Info General', 'Contacto'];
 
 const ResponsiveDrawer = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -92,8 +92,8 @@ const ResponsiveDrawer = () => {
         </IconButton>
 
         <Typography variant="h6" sx={{ color:"black",textAlign: 'center', width: '100%' }}>
-          MEGAFIESTAS DEL LLANO SAS
-        </Typography>
+SONIDO MEGAFIESTAS FX       
+ </Typography>
       </Toolbar>
     </AppBar>
   );

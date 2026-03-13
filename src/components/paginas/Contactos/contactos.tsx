@@ -1,181 +1,197 @@
-export default function ContactosMegafietas() {
-   
-    const infoStyle = {
-        display: 'flex',
-        flexDirection: 'column' as 'column',
-        justifyContent: 'space-between',
-        padding: '1rem',
-    };
+// eslint-disable-next-line
+import React from "react";
+import { IconType } from "react-icons";
+import {
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaCalendarAlt,
+  FaInstagram,
+  FaFacebook,
+  FaTiktok,
+  FaYoutube,
+  FaClock
+} from "react-icons/fa";
 
-    const buttonTextBlackStyle = {
-        fontWeight: 'bold',
-        color: '#333',
-        whiteSpace: 'nowrap' as 'nowrap',
-    };
+export default function ContactosMegafiestas() {
 
-    return (
-        <div
-            style={{
-                borderRadius: '20px',
-                background: 'var(--style-cards-bg)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                backgroundBlendMode: 'normal, color-dodge',
-                width: '300px',
-            }}
+  const WhatsappIcon: IconType = FaWhatsapp;
+  const PhoneIcon: IconType = FaPhoneAlt;
+  const CalendarIcon: IconType = FaCalendarAlt;
+  const InstagramIcon: IconType = FaInstagram;
+  const FacebookIcon: IconType = FaFacebook;
+  const TiktokIcon: IconType = FaTiktok;
+  const YoutubeIcon: IconType = FaYoutube;
+  const ClockIcon: IconType = FaClock;
+
+  const estilos = {
+    contenedor: {
+      background: "#0b0b0b",
+      color: "white",
+      minHeight: "100vh",
+      padding: "60px 20px",
+      fontFamily: "Arial"
+    } as React.CSSProperties,
+
+    titulo: {
+      textAlign: "center",
+      fontSize: "40px",
+      marginBottom: "10px",
+      letterSpacing: "2px"
+    } as React.CSSProperties,
+
+    frase: {
+      textAlign: "center",
+      fontSize: "18px",
+      color: "#ccc",
+      marginBottom: "50px",
+      fontStyle: "italic"
+    } as React.CSSProperties,
+
+    botones: {
+      display: "flex",
+      justifyContent: "center",
+      gap: "20px",
+      flexWrap: "wrap",
+      marginBottom: "50px"
+    } as React.CSSProperties,
+
+    boton: {
+      display: "flex",
+      alignItems: "center",
+      gap: "10px",
+      padding: "14px 22px",
+      borderRadius: "10px",
+      textDecoration: "none",
+      fontWeight: "bold",
+      color: "white",
+      fontSize: "16px",
+      transition: "0.3s"
+    } as React.CSSProperties,
+
+    horarios: {
+      textAlign: "center",
+      marginTop: "40px"
+    } as React.CSSProperties,
+
+    tituloHorario: {
+      fontSize: "24px",
+      marginBottom: "10px"
+    } as React.CSSProperties,
+
+    redes: {
+      display: "flex",
+      justifyContent: "center",
+      gap: "25px",
+      fontSize: "30px",
+      marginTop: "40px"
+    } as React.CSSProperties
+  };
+
+  return (
+    <div style={estilos.contenedor}>
+
+      <h1 style={estilos.titulo}>
+        Contacto MegaFiestas
+      </h1>
+
+      <p style={estilos.frase}>
+        "Las mejores fiestas no se recuerdan por lo que se gastó,  
+        sino por lo increíble que se vivió. Nosotros hacemos que tu evento sea inolvidable."
+      </p>
+
+
+      {/* BOTONES DE CONTACTO */}
+
+      <div style={estilos.botones}>
+
+        <a
+          href="https://wa.me/573115264022"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ ...estilos.boton, background: "#25D366" }}
         >
-            <div
-                style={{
-                    background: '#fff',
-                    height: '100%',
-                    padding: '2px',
-                }}
-            >
-                <div
-                    style={{
-                        fontWeight: 'bold',
-                        color: '#333',
-                        textAlign: 'center',
-                        marginTop: '1rem',
-                    }}
-                >
-                    Megafiestas de villavicencio
-                </div>
-               
-                <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '2px',
-                        width: '100%',
-                        marginTop: '2rem',
-                        marginBottom: '2rem',
-                    }}
-                >
-                    <i className="pi pi-star-fill" style={{ color: '#333' }}></i>
-                    <i className="pi pi-star-fill" style={{ color: '#333' }}></i>
-                    <i className="pi pi-star-fill" style={{ color: '#333' }}></i>
-                    <i className="pi pi-star-fill" style={{ color: '#999' }}></i>
-                    <i className="pi pi-star-fill" style={{ color: '#999' }}></i>
-                </div>
-                <div style={infoStyle}>
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            gap: '2px',
-                            padding: '0.5rem',
-                        }}
-                    >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
-                            <i className="pi pi-star-fill"></i>
-                            <span style={{ fontWeight: 'bold', color: '#333' }}>Meta</span>
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
-                            <i className="pi pi-star-fill"></i>
-                            <span style={{ fontWeight: 'bold', color: '#333' }}>Contactanos YA</span>
-                        </div>
-                    </div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            gap: '2px',
-                            padding: '0.5rem',
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                gap: '1px',
-                                borderRight: '1px solid #E5E7EB',
-                                paddingRight: '0.5rem',
-                            }}
-                        >
-                            <i className="pi pi-bolt"></i>
-                            <span style={{ fontWeight: 'bold', color: '#333' }}>Energia</span>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '1px',
-                                justifyContent: 'center',
-                                borderRight: '1px solid #E5E7EB',
-                                paddingLeft: '0.5rem',
-                                paddingRight: '0.5rem',
-                            }}
-                        >
-                            <i className="pi pi-wifi"></i>
-                            <span style={{ fontWeight: 'bold', color: '#333' }}>Wifi</span>
-                        </div>
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '1px',
-                                justifyContent: 'center',
-                                paddingLeft: '0.5rem',
-                            }}
-                        >
-                            <i className="pi pi-book"></i>
-                            <span style={{ fontWeight: 'bold', color: '#333' }}>Musica</span>
-                        </div>
-                    </div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            paddingTop: '0.5rem',
-                            paddingLeft: '0.5rem',
-                            paddingRight: '0.5rem',
-                            gap: '2px',
-                        }}
-                    >
-                        <button
-                            style={{
-                                padding: '0.75rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                width: '7rem',
-                                gap: '2px',
-                                background: '#fff',
-                                border: '1px solid #E5E7EB',
-                                boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
-                                cursor: 'pointer',
-                                borderRadius: '50px',
-                            }}
-                        >
-                            <span style={buttonTextBlackStyle}>Contact</span>
-                            <i className="pi pi-send" style={{ color: '#333' }}></i>
-                        </button>
-                        <button
-                            style={{
-                                padding: '0.75rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                width: '5rem',
-                                gap: '2px',
-                                background: '#333',
-                                border: 'none',
-                                boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
-                                cursor: 'pointer',
-                                borderRadius: '50px',
-                            }}
-                        >
-                            <span style={{ fontWeight: 'bold', color: '#fff', whiteSpace: 'nowrap' }}>Rate</span>
-                            <i className="pi pi-thumbs-up-fill" style={{ color: '#fff' }}></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+          <WhatsappIcon size={22} />
+          WhatsApp
+        </a>
+
+        <a
+          href="tel:+573115264022"
+          style={{ ...estilos.boton, background: "#007bff" }}
+        >
+          <PhoneIcon size={20} />
+          Llamar
+        </a>
+
+        <a
+          href="https://megafiestas.com/cotizar"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ ...estilos.boton, background: "#ff9800" }}
+        >
+          <CalendarIcon size={20} />
+          Cotizar Evento
+        </a>
+
+      </div>
+
+
+      {/* HORARIOS */}
+
+      <div style={estilos.horarios}>
+
+        <h2 style={estilos.tituloHorario}>
+          <ClockIcon /> Horarios de Atención
+        </h2>
+
+        <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+        <p>Sábados: 9:00 AM - 4:00 PM</p>
+        <p>Domingos y Festivos: Solo eventos programados</p>
+
+      </div>
+
+
+      {/* REDES SOCIALES */}
+
+      <div style={estilos.redes}>
+
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "white" }}
+        >
+          <InstagramIcon />
+        </a>
+
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "white" }}
+        >
+          <FacebookIcon />
+        </a>
+
+        <a
+          href="https://tiktok.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "white" }}
+        >
+          <TiktokIcon />
+        </a>
+
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "white" }}
+        >
+          <YoutubeIcon />
+        </a>
+
+      </div>
+
+    </div>
+  );
 }

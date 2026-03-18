@@ -173,9 +173,6 @@ export default function BasicDemo() {
   return (
     <div >
 
-      <h1 style={{ textAlign: "center" }}>
-        Servicios Disponibles
-      </h1>
 
       <div
         style={{

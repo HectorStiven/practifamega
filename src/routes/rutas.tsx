@@ -5,6 +5,8 @@ import InfoGeneralMegafietas from '../components/paginas/Infogeneral/infoGeneral
 import ContactosMegafietas from '../components/paginas/Contactos/contactos';
 import MostrarServiciosMegafiestas from '../components/paginas/Servicios/MuestraServicios';
 import HomeMegafiestas from '../components/home/home';
+import { Tarimas } from '../components/paginas/tarimas/Tarimas';
+import { Pistaled } from '../components/paginas/pistaled/pistaled';
 
 export default function RutasMegafiestas() {
 
@@ -40,6 +42,9 @@ export default function RutasMegafiestas() {
                     element={
                         <ContactosMegafietas />}
                 />
+                <Route path={"/pista led"} element={<Pistaled/>}/>
+                <Route path={"/tarimas"} element={<Tarimas/>}/>
+
                 <Route
                     path={"/"}
                     element={

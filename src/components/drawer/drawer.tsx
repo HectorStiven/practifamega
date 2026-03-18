@@ -6,7 +6,6 @@ import {
   CssBaseline,
   Divider,
   Drawer,
-  Grid,
   IconButton,
   List,
   ListItem,
@@ -99,11 +98,9 @@ SONIDO MEGAFIESTAS FX
   );
 
   const renderGrid = () => (
-    <Grid container spacing={0} justifyContent="center">
-      <Grid item xs={12} sm={10} md={8}>
+    
         <RutasMegafiestas />
-      </Grid>
-    </Grid>
+     
   );
 
   return (
@@ -136,7 +133,7 @@ SONIDO MEGAFIESTAS FX
           {renderDrawer()}
         </Drawer>
       </Box>
-      <Box component="main" sx={{ flexGrow: 1, p: 3, height: '100%', overflow: 'auto' }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 0,height: '100%', overflow: 'auto' }}>
         <Toolbar />
         {renderGrid()}
       </Box>
